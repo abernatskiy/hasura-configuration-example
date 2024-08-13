@@ -1,0 +1,19 @@
+type Burn @entity {
+  id: ID!
+  block: Int!
+  address: String! @index
+  value: BigInt!
+  txHash: String!
+  account: Account!
+	txn: Txn @derivedFrom(field: "burn")
+}
+
+type Account @entity {
+  id: ID!
+  burns: [Burn!]! @derivedFrom(field: "account")
+}
+
+type Txn @entity {
+	id: ID!
+	burn: Burn! @unique
+}

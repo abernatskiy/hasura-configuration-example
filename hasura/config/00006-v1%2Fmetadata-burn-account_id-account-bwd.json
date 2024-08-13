@@ -1,0 +1,14 @@
+{
+  "type": "pg_create_array_relationship",
+  "args": {
+    "table": "account",
+    "name": "burns",
+    "source": "default",
+    "using": {
+      "foreign_key_constraint_on": {
+        "table": "burn",
+        "columns": "account_id"
+      }
+    }
+  }
+}

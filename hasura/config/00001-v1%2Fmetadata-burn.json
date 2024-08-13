@@ -1,0 +1,8 @@
+{
+  "type": "pg_track_table",
+  "args": {
+    "source": "default",
+    "table": "burn",
+    "configuration": {}
+  }
+}

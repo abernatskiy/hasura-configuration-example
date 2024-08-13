@@ -1,0 +1,11 @@
+{
+  "type": "pg_create_object_relationship",
+  "args": {
+    "table": "txn",
+    "name": "burn",
+    "source": "default",
+    "using": {
+      "foreign_key_constraint_on": "burn_id"
+    }
+  }
+}
