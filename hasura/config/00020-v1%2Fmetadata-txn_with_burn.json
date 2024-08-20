@@ -2,7 +2,7 @@
   "type": "pg_track_table",
   "args": {
     "source": "default",
-    "table": "txn",
+    "table": "txn_with_burn",
     "configuration": {}
   }
 }

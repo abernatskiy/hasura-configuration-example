@@ -5,7 +5,7 @@
     "build": "rm -rf lib && tsc"
   },
   "dependencies": {
-    "@abernatskiy/hasura-configuration": "^0.0.0",
+    "@abernatskiy/hasura-configuration": "^1.0.0",
     "@subsquid/evm-abi": "^0.3.0",
     "@subsquid/evm-processor": "^1.19.1",
     "@subsquid/graphql-server": "^4.6.0",

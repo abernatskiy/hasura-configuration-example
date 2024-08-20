@@ -1,6 +1,6 @@
 import {Entity as Entity_, Column as Column_, PrimaryColumn as PrimaryColumn_, IntColumn as IntColumn_, StringColumn as StringColumn_, Index as Index_, BigIntColumn as BigIntColumn_, ManyToOne as ManyToOne_, OneToOne as OneToOne_} from "@subsquid/typeorm-store"
 import {Account} from "./account.model"
-import {Txn} from "./txn.model"
+import {TxnWithBurn} from "./txnWithBurn.model"
 
 @Entity_()
 export class Burn {
@@ -28,6 +28,6 @@ export class Burn {
     @ManyToOne_(() => Account, {nullable: true})
     account!: Account
 
-    @OneToOne_(() => Txn, e => e.burn)
-    txn!: Txn | undefined | null
+    @OneToOne_(() => TxnWithBurn, e => e.burn)
+    txn!: TxnWithBurn | undefined | null
 }

@@ -2,8 +2,8 @@ import {Entity as Entity_, Column as Column_, PrimaryColumn as PrimaryColumn_, O
 import {Burn} from "./burn.model"
 
 @Entity_()
-export class Txn {
-    constructor(props?: Partial<Txn>) {
+export class TxnWithBurn {
+    constructor(props?: Partial<TxnWithBurn>) {
         Object.assign(this, props)
     }
 
