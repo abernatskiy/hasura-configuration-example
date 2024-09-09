@@ -1,0 +1,13 @@
+{
+  "type": "pg_create_select_permission",
+  "args": {
+    "source": "default",
+    "table": "txn_with_burn",
+    "role": "public",
+    "permission": {
+      "columns": "*",
+      "filter": {},
+      "allow_aggregations": true
+    }
+  }
+}

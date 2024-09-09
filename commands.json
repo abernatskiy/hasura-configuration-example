@@ -18,6 +18,19 @@
         "description": "Drop a PG database",
         "cmd": ["docker", "compose", "down"]
       },
+      "initialize-squid:apply": {
+        "deps": ["migration:apply", "hasura-configuration:apply"],
+        "cmd": ["echo", "Initializing squid..."],
+        "hidden": true
+      },
+      "hasura-configuration:regenerate": {
+        "description": "Regenerate the Hasura configuration based on TypeORM models",
+        "cmd": ["squid-hasura-configuration", "regenerate"]
+      },
+      "hasura-configuration:apply": {
+        "description": "Apply the Hasura configuration",
+        "cmd": ["squid-hasura-configuration", "apply"]
+      },
       "migration:apply": {
         "description": "Apply the DB migrations",
         "cmd": ["squid-typeorm-migration", "apply"]
@@ -54,18 +67,6 @@
         "deps": ["migration:apply"],
         "cmd": ["node", "lib/main.js"],
         "hidden": true
-      },
-      "serve": {
-        "description": "Start the GraphQL API server",
-        "cmd": ["squid-graphql-server"]
-      },
-      "serve:prod": {
-        "description": "Start the GraphQL API server with caching and limits",
-        "cmd": ["squid-graphql-server",
-          "--dumb-cache", "in-memory",
-          "--dumb-cache-ttl", "1000",
-          "--dumb-cache-size", "100",
-          "--dumb-cache-max-age", "1000" ]
       },
       "check-updates": {
         "cmd": ["npx", "--yes", "npm-check-updates", "--filter=/subsquid/", "--upgrade"],
