@@ -62,7 +62,7 @@ You may want to regenerate it after changing your schema. Here's how:
 > [!IMPORTANT]
 > Regenerating `hasura_metadata.json` removes any modifications you might have made via metadata exporting. So, it is advisable that you finalize your schema before you begin any manual API fine-tuning.
 
-### Environment variables
+## Environment variables
 
 Hasura container and the configuration tool use the following variables:
 
